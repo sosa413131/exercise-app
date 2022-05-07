@@ -7,7 +7,7 @@ import { Geolocation } from '@capacitor/geolocation';
 
 interface ContainerProps { }
 
-const CheckIn: React.FC<ContainerProps> = () => {
+const CheckIn: React.FC<ContainerProps> = (props) => {
 
     interface coordinates {
         lat: number;
@@ -46,9 +46,11 @@ const CheckIn: React.FC<ContainerProps> = () => {
     var handleClickCheckIn = (event: any) => {
         event.preventDefault();
         console.log("check in");
-        getCoordinates();
-        history.push("/checkin");
-
+        console.log("data: ",coordinates);
+        history.push({
+            pathname: "/checkin",
+            state: { "geoData": coordinates }
+        });
     };
 
 
