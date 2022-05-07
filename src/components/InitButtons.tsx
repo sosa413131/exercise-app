@@ -11,37 +11,45 @@ const CheckIn: React.FC<ContainerProps> = () => {
     interface coordinates {
         lat: number;
         long:number;
-        altitude?:number
+        altitude:number;
     }
-    const [coordinates, setCoordinates] = useState({"lat":null, "long": null, "altitude": null});
+
+    const [coordinates, setCoordinates] = useState<coordinates>({"lat":NaN, "long": NaN, "altitude": NaN});
     useEffect(() => {
         getCoordinates()
 
       }, []);
     
     var getCoordinates= async ()=>{
-        const coordinates = await Geolocation.getCurrentPosition(); 
-        console.log('Current lat: ', coordinates.coords.latitude);
-        console.log('Current long: ', coordinates.coords.longitude);
-        console.log('Current altitude:', coordinates.coords.altitude);
+        try{
+            const geo = await Geolocation.getCurrentPosition();
 
-        let lat = coordinates.coords.latitude;
-        let long= coordinates.coords.longitude;
-        if(coordinates.coords.altitude){
-            let alt =coordinates.coords.altitude;
+            var newCoordinates:coordinates = {
+                lat: geo.coords.latitude? geo.coords.latitude: NaN,
+                long:geo.coords.longitude? geo.coords.longitude: NaN,
+                altitude: geo.coords.altitude? geo.coords.altitude: NaN,
+            }
+
+            // console.log(newCoordinates);
+            setCoordinates(newCoordinates);
+
+        } catch (error : any){
+            console.log(error);
+
         }
 
     };
 
     var handleClickCheckIn=(event:any)=>{
         event.preventDefault();
-        console.log("check in");
+        // console.log("check in");
+        getCoordinates();
     };
 
     
     var handleClickViewWorkouts=(event:any)=>{
         event.preventDefault();
-        console.log("view workouts");
+        // console.log("view workouts");
     };
 
     return (
