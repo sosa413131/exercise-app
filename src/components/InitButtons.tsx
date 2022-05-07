@@ -1,61 +1,67 @@
 import { IonButton, IonIcon, IonContent } from '@ionic/react';
 import { useEffect, useState } from 'react';
 import { star } from 'ionicons/icons';
-import { useHistory } from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom";
 import './InitButtons.css';
 import { Geolocation } from '@capacitor/geolocation';
 
 interface ContainerProps { }
 
 const CheckIn: React.FC<ContainerProps> = () => {
+
     interface coordinates {
         lat: number;
-        long:number;
-        altitude:number;
+        long: number;
+        altitude: number;
     }
 
-    const [coordinates, setCoordinates] = useState<coordinates>({"lat":NaN, "long": NaN, "altitude": NaN});
+    const [coordinates, setCoordinates] = useState<coordinates>({ "lat": NaN, "long": NaN, "altitude": NaN });
+
+    var history = useHistory();
+
     useEffect(() => {
+
         getCoordinates()
 
-      }, []);
-    
-    var getCoordinates= async ()=>{
-        try{
+    }, []);
+
+    var getCoordinates = async () => {
+        try {
             const geo = await Geolocation.getCurrentPosition();
 
-            var newCoordinates:coordinates = {
-                lat: geo.coords.latitude? geo.coords.latitude: NaN,
-                long:geo.coords.longitude? geo.coords.longitude: NaN,
-                altitude: geo.coords.altitude? geo.coords.altitude: NaN,
+            var newCoordinates: coordinates = {
+                lat: geo.coords.latitude ? geo.coords.latitude : NaN,
+                long: geo.coords.longitude ? geo.coords.longitude : NaN,
+                altitude: geo.coords.altitude ? geo.coords.altitude : NaN,
             }
 
-            // console.log(newCoordinates);
             setCoordinates(newCoordinates);
 
-        } catch (error : any){
+        } catch (error: any) {
             console.log(error);
-
         }
 
     };
 
-    var handleClickCheckIn=(event:any)=>{
+    var handleClickCheckIn = (event: any) => {
         event.preventDefault();
-        // console.log("check in");
+        console.log("check in");
         getCoordinates();
+        history.push("/checkin");
+
     };
 
-    
-    var handleClickViewWorkouts=(event:any)=>{
+
+    var handleClickViewWorkouts = (event: any) => {
         event.preventDefault();
-        // console.log("view workouts");
+        console.log("view workouts");
+        history.push("/workouts");
     };
 
     return (
         <div className="container initButtons">
             <div className='checkInButtonParent'>
-                <IonButton className='checkInButton'  onClick={handleClickCheckIn} color="primary">Check In</IonButton>
+                <IonButton className='checkInButton' onClick={handleClickCheckIn} color="primary">Check In</IonButton>
             </div>
 
             <div className='viewWorkoutsButtonParent'>

@@ -1,15 +1,18 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/react';
 import './CheckIn.css';
 
-interface ContainerProps { }
+interface ContainerProps {
+}
 
-const CheckIn: React.FC = (ContainerProps) => {
-  return (
-    <div>
-        Checked In
-    </div>
+const CheckIn: React.FC<ContainerProps> = (match) => {
+    return (
+        <IonPage>
+            <div className='checkin'>
+                Checked In
+            </div>
+        </IonPage>
 
-  )
+    )
 }
 
 export default CheckIn;

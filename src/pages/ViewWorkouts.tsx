@@ -3,10 +3,17 @@ import ExploreContainer from '../components/ExploreContainer';
 import InitButtons from '../components/InitButtons';
 import './ViewWorkouts.css';
 
-const ViewWorkouts: React.FC = () => {
+// interface ContainerProps {
+
+//  }
+
+const ViewWorkouts: React.FC<any> = (...[match]) => {
   return (
-    <>
-    </>
+    <IonPage>
+      <div className='workouts'>
+        Workouts
+      </div>
+    </IonPage>
 
   )
 }
