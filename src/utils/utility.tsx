@@ -7,9 +7,8 @@ interface coordinates {
     altitude: number;
 }
 
-
 var getCoordinates = async () => {
-    
+
     try {
         const geo = await Geolocation.getCurrentPosition();
 

@@ -13,7 +13,6 @@ const CheckIn: React.FC<ContainerProps> = () => {
 
     const location: any = useLocation();
 
-
     useEffect(() => {
 
         if (location.state) {

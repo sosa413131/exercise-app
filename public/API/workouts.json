@@ -1,0 +1,25 @@
+[
+    {
+        "workoutname": "flat barbell bench preses",
+        "targeted muscles": "chest",
+        "equipment required": true,
+        "video": "link here",
+        "animation": "other link here"
+    },
+    {
+        "workoutname": "incline barbell bench preses",
+        "targeted muscles": "chest",
+        "equipment required": true,
+        "video": "link here",
+        "animation": "other link here"
+
+    },
+    {
+        "workoutname": "decline barbell bench preses",
+        "targeted muscles": "chest",
+        "equipment required": true,
+        "video": "link here",
+        "animation": "other link here"
+
+    }
+]
