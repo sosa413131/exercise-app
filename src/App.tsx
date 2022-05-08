@@ -36,9 +36,9 @@ const App: React.FC = () => (
         <Route exact path="/">
           <Redirect to="/home" />
         </Route>
-        <Route exact path="/checkin" render={(props)=>{return <CheckIn/>}}>
+        <Route exact path="/checkin" render={(props)=>{return <CheckIn {...props}/>}}>
         </Route>
-        <Route exact path="/workouts" render={(props)=>{return <ViewWorkouts/>}}>
+        <Route exact path="/workouts" render={(props)=>{return <ViewWorkouts  {...props} />}}>
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>

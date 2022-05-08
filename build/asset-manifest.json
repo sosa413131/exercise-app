@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2c953430.css",
+    "main.js": "/static/js/main.fb112bfd.js",
+    "static/js/630.264b4d01.chunk.js": "/static/js/630.264b4d01.chunk.js",
+    "static/js/738.c8fa5222.chunk.js": "/static/js/738.c8fa5222.chunk.js",
+    "static/js/372.04984f20.chunk.js": "/static/js/372.04984f20.chunk.js",
+    "static/js/856.ce844fc3.chunk.js": "/static/js/856.ce844fc3.chunk.js",
+    "static/js/22.caf7c91a.chunk.js": "/static/js/22.caf7c91a.chunk.js",
+    "static/js/851.2568b49a.chunk.js": "/static/js/851.2568b49a.chunk.js",
+    "static/js/215.70d3f220.chunk.js": "/static/js/215.70d3f220.chunk.js",
+    "static/js/841.082ef654.chunk.js": "/static/js/841.082ef654.chunk.js",
+    "static/js/186.228f8b1e.chunk.js": "/static/js/186.228f8b1e.chunk.js",
+    "static/js/434.5c8c9a5b.chunk.js": "/static/js/434.5c8c9a5b.chunk.js",
+    "static/js/377.c03f4f12.chunk.js": "/static/js/377.c03f4f12.chunk.js",
+    "service-worker.js": "/service-worker.js",
+    "index.html": "/index.html",
+    "main.2c953430.css.map": "/static/css/main.2c953430.css.map",
+    "main.fb112bfd.js.map": "/static/js/main.fb112bfd.js.map",
+    "630.264b4d01.chunk.js.map": "/static/js/630.264b4d01.chunk.js.map",
+    "738.c8fa5222.chunk.js.map": "/static/js/738.c8fa5222.chunk.js.map",
+    "372.04984f20.chunk.js.map": "/static/js/372.04984f20.chunk.js.map",
+    "856.ce844fc3.chunk.js.map": "/static/js/856.ce844fc3.chunk.js.map",
+    "22.caf7c91a.chunk.js.map": "/static/js/22.caf7c91a.chunk.js.map",
+    "851.2568b49a.chunk.js.map": "/static/js/851.2568b49a.chunk.js.map",
+    "215.70d3f220.chunk.js.map": "/static/js/215.70d3f220.chunk.js.map",
+    "841.082ef654.chunk.js.map": "/static/js/841.082ef654.chunk.js.map",
+    "186.228f8b1e.chunk.js.map": "/static/js/186.228f8b1e.chunk.js.map",
+    "434.5c8c9a5b.chunk.js.map": "/static/js/434.5c8c9a5b.chunk.js.map",
+    "377.c03f4f12.chunk.js.map": "/static/js/377.c03f4f12.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2c953430.css",
+    "static/js/main.fb112bfd.js"
+  ]
+}

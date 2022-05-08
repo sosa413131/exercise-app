@@ -1,29 +1,53 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/react';
 import { useLocation } from "react-router-dom";
+import { useEffect } from 'react';
+import { getCoordinates, coordinates } from "../utils/utility";
 import './CheckIn.css';
 
 interface ContainerProps {
 }
 
-const CheckIn: React.FC<any> = () => {
-    const location:any = useLocation();
-    var geoData = location.state.geoData;
+var geo: coordinates;
 
-    return (
-        <IonPage>
-            <div className='checkin'>
-                <div>
-                lat : {geoData.lat}
+const CheckIn: React.FC<ContainerProps> = () => {
+
+    const location: any = useLocation();
+
+
+    useEffect(() => {
+
+        if (location.state) {
+            geo = location.state.geoSpacialData;
+        } else {
+            getCoordinates().then((response: any) =>
+                geo = response)
+        }
+
+
+    }, [location]);
+
+
+
+    if (geo) {
+        return (
+            <IonPage>
+
+                <div className='checkin'>
+                    <div>
+                        lat : {geo["lat"]}
+                    </div>
+                    <div>
+                        long : {geo["long"]}
+                    </div>
+                    <div>
+                        altitude: {geo["altitude"]}
+                    </div>
                 </div>
-                <div>
-                long : {geoData.long}
-                </div>
-                <div>
-                altitude: {geoData.altitude}
-                </div>      
-            </div>
-        </IonPage>
-    );
-};
+            </IonPage>
+        )
+    }  else {
+        return (<IonPage>Loading</IonPage>)
+    }
+}
 
 export default CheckIn;
