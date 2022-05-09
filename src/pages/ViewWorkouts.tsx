@@ -30,13 +30,24 @@ const ViewWorkouts: React.FC<ContainerProps> = (...[match]) => {
   if (workoutArray) {
     return (
       <IonPage>
-        <div className='workouts'>
-          Workouts
-          {workoutArray.map((workoutObject) => {
-            return <Workout name={workoutObject.workoutname}/>
-
-          })}
-        </div>
+        <IonContent>
+          <div className='workouts'>
+            Workouts
+            <table>
+              <tr>
+                <th>Demo</th>
+                <th>Name</th>
+                <th>Targeted Muscle</th>
+              </tr>
+              <tbody>
+                {workoutArray.map((workoutObject: any, index: number) => {
+                  return (
+                    <Workout key={index} name={workoutObject.workoutname} targetedMuscle={workoutObject["targeted muscles"]} video={workoutObject["video"]} animation={workoutObject["animation"]} image={workoutObject["image"]} />
+                  )})}
+              </tbody>
+            </table>
+          </div>
+        </IonContent>
       </IonPage>)
   } else {
     return (
