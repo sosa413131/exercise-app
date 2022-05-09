@@ -1,5 +1,5 @@
-
 import { Geolocation } from '@capacitor/geolocation';
+import { Camera, CameraResultType } from '@capacitor/camera';
 
 interface coordinates {
     lat: number;
@@ -25,5 +25,14 @@ var getCoordinates = async () => {
     }
 };
 
-export { getCoordinates };
+const takePicture = async () => {
+    const image = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: true,
+      resultType: CameraResultType.Uri
+    });
+    return image;
+}
+
+export { getCoordinates, takePicture };
 export type { coordinates };

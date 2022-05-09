@@ -1,13 +1,9 @@
 .initButtons {
     margin: auto;
+    /* position: relative; */
 }
 
-.checkInButtonParent {
-    margin: 0 auto;
+.checkInButtonParent, .viewWorkoutsButtonParen, .takePhotoButtonParent {
     text-align: center;
-};
 
-.viewWorkoutsButtonParent {
-    margin: 0 auto;
-    text-align: center;
-}; 
+};

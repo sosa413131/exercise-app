@@ -16,7 +16,6 @@ const CheckIn: React.FC<ContainerProps> = (props) => {
 
     useEffect(() => {
         getCoordinates().then((response:any)=>{
-            console.log(response)
             setCoordinates(response);
 
         })}, []);
@@ -30,12 +29,15 @@ const CheckIn: React.FC<ContainerProps> = (props) => {
         });
     };
 
-
     var handleClickViewWorkouts = (event: any) => {
         event.preventDefault();
-        console.log("view workouts");
         history.push("/workouts");
     };
+
+    var handleClickTakePhoto=(event:any)=>{
+        event.preventDefault();
+        history.push("/takephoto");
+    }
 
     return (
         <div className="container initButtons">
@@ -46,7 +48,9 @@ const CheckIn: React.FC<ContainerProps> = (props) => {
             <div className='viewWorkoutsButtonParent'>
                 <IonButton className='viewWorkoutsButton' onClick={handleClickViewWorkouts} color="primary">View Workouts</IonButton>
             </div>
-
+            <div className='takePhotoButtonParent'>
+                <IonButton className='takePhotoButton' onClick={handleClickTakePhoto} color="primary">Take Photo</IonButton>
+            </div>
         </div>
 
     )
